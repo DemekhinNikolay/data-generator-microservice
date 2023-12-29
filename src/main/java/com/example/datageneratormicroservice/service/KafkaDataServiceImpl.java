@@ -9,7 +9,7 @@ import reactor.kafka.sender.SenderRecord;
 
 @Service
 @RequiredArgsConstructor
-public class KafkaDataServiceImpl implements KafkaDataService{
+public class KafkaDataServiceImpl implements KafkaDataService {
 
     private final KafkaSender<String, Object> sender;
 
@@ -23,17 +23,17 @@ public class KafkaDataServiceImpl implements KafkaDataService{
         };
 
         sender.send(
-                Mono.just(
-                        SenderRecord.create(
-                                topic,
-                                0,
-                                System.currentTimeMillis(),
-                                String.valueOf(data.hashCode()),
-                                data,
-                                null
+                        Mono.just(
+                                SenderRecord.create(
+                                        topic,
+                                        0,
+                                        System.currentTimeMillis(),
+                                        String.valueOf(data.hashCode()),
+                                        data,
+                                        null
+                                )
                         )
                 )
-        )
                 .subscribe();
     }
 

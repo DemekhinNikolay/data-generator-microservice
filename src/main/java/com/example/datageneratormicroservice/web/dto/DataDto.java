@@ -21,5 +21,4 @@ public class DataDto {
     private Data.MeasurementType measurementType;
 
 
-
 }

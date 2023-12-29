@@ -3,7 +3,6 @@ package com.example.datageneratormicroservice.service;
 import com.example.datageneratormicroservice.model.Data;
 import com.example.datageneratormicroservice.model.test.DataTestOptions;
 import lombok.RequiredArgsConstructor;
-import net.bytebuddy.utility.nullability.MaybeNull;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -13,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 @Service
 @RequiredArgsConstructor
-public class TestDataServiceImpl implements TestDataService{
+public class TestDataServiceImpl implements TestDataService {
 
     private final ScheduledExecutorService executorService
             = Executors.newSingleThreadScheduledExecutor();
@@ -27,7 +26,7 @@ public class TestDataServiceImpl implements TestDataService{
                     () -> {
                         Data data = new Data();
                         data.setSensorId(
-                                (long) getRandomNumber(1,10)
+                                (long) getRandomNumber(1, 10)
                         );
                         data.setMeasurement(
                                 getRandomNumber(15, 100)

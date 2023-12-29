@@ -6,6 +6,6 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface DataTestOptionsMapper
-        extends Mappable<DataTestOptions, DataTestOptionsDto>{
+        extends Mappable<DataTestOptions, DataTestOptionsDto> {
 
 }

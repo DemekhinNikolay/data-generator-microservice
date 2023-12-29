@@ -60,6 +60,7 @@ public class KafkaConfig {
                 )
                 .build();
     }
+
     @Bean
     public SenderOptions<String, Object> senderOptions() {
         Map<String, Object> props = new HashMap<>(3);
